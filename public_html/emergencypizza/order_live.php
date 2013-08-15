@@ -1,19 +1,41 @@
-<?php/*
+<?php
+
+ini_set("log_errors", 1);
+ini_set("error_log", "tmp/php-error.log");
+//error_log( "Hello, errors2!" );
+
+
+error_reporting(-1);
+ini_set('display_errors','On'); //turn to Off for production
+
+
+
+/*
+The app simply needs to hit the URL 
+http://instadefine.com/emergencypizza/order_live.php
+
+with the following parameters
+*/
+
+
+
+/*
 ini_set("log_errors", 1);
 ini_set("error_log", "tmp/php-error.log");
 error_log( "Hello, errors!" );
 */
 
-echo 'aoeu';
 //error_reporting(-1);
 //ini_set('display_errors','On');
 //echo 'aoeu';
 
-//require 'lib/stripe-php-1.8.1/lib/Stripeh.php';
 
-//require 'lib/stripe-php-1.8.1/lib/Stripe.php';
-exit;
+require 'lib/stripe-php-1.8.1/lib/Stripe.php';
 
+?>
+
+
+<?php
 //should only be called from app
 if ($_POST||$_GET['123test']) {
     Stripe::setApiKey("sk_test_nqswmnpPT3CHdkbsgtrQSWR2");
